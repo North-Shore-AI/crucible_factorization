@@ -1,6 +1,11 @@
 # CrucibleFactorization
 
-**TODO: Add description**
+Nx SVD/SVF factorization primitives for model surgery and TRINITY artifact
+export.
+
+This package intentionally owns the temporary Nx/EXLA git pin required for the
+thin-SVD memory behavior used by the coordinator. Contract packages should not
+inherit that pin directly.
 
 ## Installation
 
@@ -19,3 +24,14 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/crucible_factorization>.
 
+## CI
+
+```sh
+mix ci
+```
+
+CUDA is opt-in:
+
+```sh
+XLA_TARGET=cuda12 mix test --only cuda
+```
