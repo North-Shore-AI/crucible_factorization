@@ -2,7 +2,6 @@ defmodule CrucibleFactorization.MixProject do
   use Mix.Project
 
   @version "0.1.0"
-  @nx_ref "6424c8902380380cd7a8c282b0557d653aead018"
   @source_url "https://github.com/North-Shore-AI/crucible_factorization"
 
   def project do
@@ -42,8 +41,8 @@ defmodule CrucibleFactorization.MixProject do
 
   defp deps do
     [
-      {:nx, github: "elixir-nx/nx", sparse: "nx", ref: @nx_ref, override: true},
-      {:exla, github: "elixir-nx/nx", sparse: "exla", ref: @nx_ref, override: true},
+      {:nx, "~> 0.12", override: true},
+      {:exla, "~> 0.12", override: true},
       {:safetensors, "~> 0.1.3"},
       {:jason, "~> 1.4"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
