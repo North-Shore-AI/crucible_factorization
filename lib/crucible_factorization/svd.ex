@@ -24,7 +24,7 @@ defmodule CrucibleFactorization.SVD do
   defdelegate adapt_tensors(tensors, scale_offsets, opts \\ []), to: Crucible.Factorization.SVD
   defdelegate put_tensor_entries(container, tensor_entries), to: Crucible.Factorization.SVD
 
-  defdelegate load_router_vector!(path, tensor_name \\ "trinity_router_es_vector"),
+  defdelegate load_router_vector!(path, tensor_name \\ "router_vector"),
     to: Crucible.Factorization.SVD
 
   defdelegate split_router_vector(vector, scale_count, hidden_size, output_count),

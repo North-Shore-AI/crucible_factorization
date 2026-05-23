@@ -1,18 +1,5 @@
 defmodule CrucibleFactorization do
   @moduledoc """
-  Documentation for `CrucibleFactorization`.
+  Nx SVD/SVF factorization primitives for model surgery and artifact export.
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> CrucibleFactorization.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end

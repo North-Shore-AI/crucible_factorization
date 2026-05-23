@@ -8,4 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2026-05-23
 
 ### Added
-- Initial release of `CrucibleFactorization` under the TRINITY decomposition.
+- Initial release of `CrucibleFactorization` from the monolith extraction.

@@ -62,6 +62,21 @@ defmodule CrucibleFactorization.SVDTest do
     assert result.backend_label == "Nx.BinaryBackend"
   end
 
+  test "load_router_vector!/2 defaults to a generic tensor name" do
+    path = tmp_path("router_vector.safetensors")
+    Safetensors.write!(path, %{"router_vector" => Nx.tensor([1.0, 2.0], type: :f32)})
+
+    assert SVD.load_router_vector!(path) |> Nx.to_flat_list() == [1.0, 2.0]
+  end
+
+  test "load_router_vector!/2 accepts explicit product tensor names" do
+    path = tmp_path("custom_router_vector.safetensors")
+    tensor_name = "product_router_vector"
+    Safetensors.write!(path, %{tensor_name => Nx.tensor([3.0, 4.0], type: :f32)})
+
+    assert SVD.load_router_vector!(path, tensor_name) |> Nx.to_flat_list() == [3.0, 4.0]
+  end
+
   defp reconstruction_error(result, matrix) do
     result
     |> SVD.reconstruct(Nx.broadcast(0.0, {result.rank}))
@@ -80,5 +95,11 @@ defmodule CrucibleFactorization.SVDTest do
       |> Nx.to_number()
 
     assert max_abs <= tolerance
+  end
+
+  defp tmp_path(name) do
+    dir = Path.join(System.tmp_dir!(), "crucible_factorization_tests")
+    File.mkdir_p!(dir)
+    Path.join(dir, "#{System.unique_integer([:positive])}_#{name}")
   end
 end

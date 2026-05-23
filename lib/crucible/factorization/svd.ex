@@ -5,7 +5,7 @@ defmodule Crucible.Factorization.SVD do
 
   alias CrucibleFactorization.{Backend, Errors, StageTiming}
 
-  @router_vector_key "trinity_router_es_vector"
+  @router_vector_key "router_vector"
 
   @type decomposition :: %{
           required(:u) => Nx.Tensor.t(),

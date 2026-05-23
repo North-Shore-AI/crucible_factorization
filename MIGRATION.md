@@ -1,8 +1,7 @@
 # Migration Notes
 
-This repo was scaffolded during TRINITY decomposition Phase 1 so
-`trinity_framework` could resolve local path dependencies before the public
-GitHub repos existed.
+This repo was scaffolded during the monolith extraction so framework consumers
+could resolve local path dependencies before the public GitHub repos existed.
 
 Source material for the Phase 3 implementation:
 
@@ -16,4 +15,5 @@ Source material for the Phase 3 implementation:
 The implementation keeps provider, orchestration, tracing, and product runtime
 dependencies out of the factorization package. Compatibility functions that
 previously accepted model-state structs now operate on generic maps or structs
-with a `:data` field.
+with a `:data` field. Product-specific tensor keys belong in callers, not in
+the reusable package defaults.
