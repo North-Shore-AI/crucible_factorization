@@ -31,8 +31,8 @@
            filter="url(#neonGlow)" />
            
   <!-- Factorization Graphic (A = U * Sigma * V^T) -->
-  <!-- Shifted X to 90 and scale to 0.8 to perfectly balance the visual layout inside the hexagon -->
-  <g transform="translate(90, 100) scale(0.8)">
+  <!-- Shifted X to 90 and Y to 112, scale to 0.8 to perfectly center the visual layout inside the hexagon -->
+  <g transform="translate(90, 112) scale(0.8)">
     
     <!-- Original Matrix A (Left Side) -->
     <g transform="translate(-55, -15)">
