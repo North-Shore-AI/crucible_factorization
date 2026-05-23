@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/crucible_factorization.svg" alt="CrucibleFactorization Logo" width="120px" />
+  <img src="assets/crucible_factorization.svg" alt="CrucibleFactorization Logo" width="200px" />
 </p>
 
 # CrucibleFactorization
