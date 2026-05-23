@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Background and glowing gradients -->
+    <linearGradient id="cyberPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F355DA" />
+      <stop offset="100%" stop-color="#7000FF" />
+    </linearGradient>
+    <linearGradient id="matrixGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F355DA" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF007F" />
+      <stop offset="100%" stop-color="#FF5E62" />
+    </linearGradient>
+    
+    <!-- Neon glow filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hexagon Background and Border -->
+  <polygon points="100,6 181,53 181,147 100,194 19,147 19,53" 
+           fill="#0F1115" fill-opacity="0.9" 
+           stroke="url(#cyberPurple)" stroke-width="5" stroke-linejoin="round"
+           filter="url(#neonGlow)" />
+           
+  <!-- Factorization Graphic (A = U * Sigma * V^T) -->
+  <g transform="translate(100, 100) scale(0.9)">
+    
+    <!-- Original Matrix A (Left Side) -->
+    <g transform="translate(-55, -15)">
+      <rect x="-20" y="-20" width="40" height="40" rx="3" fill="url(#matrixGrad)" stroke="#F355DA" stroke-width="1.5" />
+      <!-- Grid pattern lines inside A -->
+      <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <line x1="-20" y1="10" x2="20" y2="10" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <line x1="-10" y1="-20" x2="-10" y2="20" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <line x1="10" y1="-20" x2="10" y2="20" stroke="#FFFFFF" stroke-opacity="0.15" />
+      <text x="0" y="5" font-family="'Outfit', 'Inter', sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">A</text>
+    </g>
+
+    <!-- Cutting/Surgery Laser Beam -->
+    <path d="M -55,-42 L -55,12" stroke="url(#laserGrad)" stroke-width="2" stroke-dasharray="3,3" filter="url(#neonGlow)" />
+    <!-- Surgical scalpel/laser cursor -->
+    <circle cx="-55" cy="-15" r="4" fill="#FF007F" filter="url(#neonGlow)" />
+    
+    <!-- Decomposition Arrow / Beam -->
+    <path d="M -25,-15 L -5,-15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+    <polygon points="-5,-12 -5,-18 2,-15" fill="#FFFFFF" />
+
+    <!-- Factors (Right Side) -->
+    
+    <!-- Matrix U (Tall Column) -->
+    <g transform="translate(15, -15)">
+      <rect x="-8" y="-20" width="16" height="40" rx="2" fill="url(#matrixGrad)" stroke="#7000FF" stroke-width="1.5" />
+      <line x1="-8" y1="-10" x2="8" y2="-10" stroke="#FFFFFF" stroke-opacity="0.1" />
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#FFFFFF" stroke-opacity="0.1" />
+      <line x1="-8" y1="10" x2="8" y2="10" stroke="#FFFFFF" stroke-opacity="0.1" />
+      <text x="0" y="5" font-family="'Outfit', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">U</text>
+    </g>
+
+    <!-- Operator * -->
+    <text x="31" y="-11" font-family="'Outfit', 'Inter', sans-serif" font-size="12" fill="#F355DA" font-weight="bold" text-anchor="middle">×</text>
+
+    <!-- Matrix Sigma (Diagonal/Square) -->
+    <g transform="translate(47, -15)">
+      <rect x="-14" y="-14" width="28" height="28" rx="2" fill="#0F1115" stroke="#F355DA" stroke-width="1.5" />
+      <!-- Glowing diagonal dots -->
+      <circle cx="-7" cy="-7" r="2.5" fill="#FF007F" filter="url(#neonGlow)" />
+      <circle cx="0" cy="0" r="2.5" fill="#FF007F" filter="url(#neonGlow)" />
+      <circle cx="7" cy="7" r="2.5" fill="#FF007F" filter="url(#neonGlow)" />
+      <text x="0" y="19" font-family="'Outfit', 'Inter', sans-serif" font-size="10" font-weight="bold" fill="#F355DA" text-anchor="middle">Σ</text>
+    </g>
+
+    <!-- Operator * -->
+    <text x="69" y="-11" font-family="'Outfit', 'Inter', sans-serif" font-size="12" fill="#F355DA" font-weight="bold" text-anchor="middle">×</text>
+
+    <!-- Matrix V^T (Wide Row) -->
+    <g transform="translate(87, -15)">
+      <rect x="-12" y="-8" width="24" height="16" rx="2" fill="url(#matrixGrad)" stroke="#7000FF" stroke-width="1.5" />
+      <line x1="-4" y1="-8" x2="-4" y2="8" stroke="#FFFFFF" stroke-opacity="0.1" />
+      <line x1="4" y1="-8" x2="4" y2="8" stroke="#FFFFFF" stroke-opacity="0.1" />
+      <text x="0" y="5" font-family="'Outfit', 'Inter', sans-serif" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Vᵀ</text>
+    </g>
+
+  </g>
+  
+  <!-- Subtle Surgery Stitch Accents at top/bottom inside hex -->
+  <path d="M 50,30 L 150,30" stroke="#7000FF" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 50,170 L 150,170" stroke="#7000FF" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="5,5" />
+</svg>

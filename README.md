@@ -1,4 +1,17 @@
+<p align="center">
+  <img src="assets/crucible_factorization.svg" alt="CrucibleFactorization Logo" width="120px" />
+</p>
+
 # CrucibleFactorization
+
+<p align="center">
+  <a href="https://github.com/North-Shore-AI/crucible_factorization/actions/workflows/ci.yml">
+    <img src="https://github.com/North-Shore-AI/crucible_factorization/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI Status" />
+  </a>
+  <a href="https://github.com/North-Shore-AI/crucible_factorization/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/North-Shore-AI/crucible_factorization" alt="GitHub License" />
+  </a>
+</p>
 
 Nx SVD/SVF factorization primitives for model surgery and TRINITY artifact
 export.
